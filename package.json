@@ -63,14 +63,17 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
   },
+  "homepage": "http://karthickthankyou.github.io/ui-component-library-react/",
   "scripts": {
     "prestart": "npm run gen:docs",
     "start": "npm-run-all --parallel start:docs gen:docs:watch",
     "start:docs": "node scripts/start",
     "gen:docs": "node scripts/generateComponentData",
     "gen:docs:watch": "npm run gen:docs -- --watch",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build:docs": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "predeploy:docs": "npm run build:docs",
+    "deploy:docs": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -146,6 +149,7 @@
     "chokidar": "1.6.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "gh-pages": "^2.2.0",
     "npm-run-all": "4.0.2",
     "react-addons-test-utils": "^15.6.2",
     "react-docgen": "2.14.0",
